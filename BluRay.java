@@ -7,7 +7,7 @@ public class BluRay extends AudioVisual{
     }
 
     public double calculaPrecoVenda(){
-        return (preco * duracao)/100;
+        return ( super.getPrecoBase() * duracao)/100;
     }
 
     public double calculaImposto(){

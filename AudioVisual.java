@@ -1,4 +1,3 @@
-package POO_T2;
 
 abstract class AudioVisual implements Cobravel {
     private String titulo;
@@ -13,5 +12,10 @@ abstract class AudioVisual implements Cobravel {
 
 
     public abstract double calculaImposto();
+
+    public double getPrecoBase(){
+        return precoBase;
+    }
+
     
 }
