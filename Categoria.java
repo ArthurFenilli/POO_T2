@@ -17,6 +17,16 @@ public enum Categoria {
         return porcentagem;
     }
 
+    public Categoria fromNome(final String nomes){
+        for (final Categoria categoria : Categoria.values()) {
+            if (categoria.nome.equalsIgnoreCase(nomes)) {
+                return categoria ;
+            }
+        }
+        throw new IllegalArgumentException(nomes);
+
+    }
+
 
 
     

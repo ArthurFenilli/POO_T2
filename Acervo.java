@@ -32,6 +32,10 @@ public class Acervo {
             double preco2 = Double.parseDouble(sc.next());
             sc.next();
             String categoria = sc.next();
+            Categoria categoria_r = null;
+            categoria_r = categoria_r.fromNome(categoria);
+            Game game = new Game(titulo2, preco2, categoria_r);
+            lista.add(game);
 
         }
         }
