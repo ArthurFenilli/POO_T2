@@ -1,8 +1,8 @@
 public enum Categoria {
-    ACAO("Ação",0.2),
-    ESTRATEGIA("Estratégia",0.4),
+    ACAO("Acao",0.2),
+    ESTRATEGIA("Estrategia",0.4),
     ESPORTE("Esporte",0.3),
-    SIMULACAO("Simulação",0.5),
+    SIMULACAO("Simulacao",0.5),
     RPG("RPG",0.7);
 
     private final String nome;
@@ -17,7 +17,7 @@ public enum Categoria {
         return porcentagem;
     }
 
-    public Categoria fromNome( String nomes){
+    public static Categoria fromNome( String nomes){
         for (final Categoria categoria : Categoria.values()) {
             if (categoria.nome.equalsIgnoreCase(nomes)) {
                 return categoria ;

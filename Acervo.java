@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Acervo {
     private ArrayList<AudioVisual> lista;
-    private Categoria categoria_r;
 
     public Acervo(){
         lista = new ArrayList<AudioVisual>();
@@ -33,7 +32,7 @@ public class Acervo {
             double preco2 = Double.parseDouble(sc.next());
             sc.next();
             String categoria = sc.next();
-            categoria_r = categoria_r.fromNome(categoria);
+            Categoria categoria_r = Categoria.fromNome(categoria);
             Game game = new Game(titulo2, preco2,categoria_r );
             lista.add(game);
 
