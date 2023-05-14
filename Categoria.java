@@ -8,7 +8,7 @@ public enum Categoria {
     private final String nome;
     private final double porcentagem;
 
-    private Categoria(final String nome, final double porcentagem){
+        Categoria(final String nome, final double porcentagem){
         this.nome = nome;
         this.porcentagem = porcentagem;
     }
@@ -17,7 +17,7 @@ public enum Categoria {
         return porcentagem;
     }
 
-    public Categoria fromNome(final String nomes){
+    public Categoria fromNome( String nomes){
         for (final Categoria categoria : Categoria.values()) {
             if (categoria.nome.equalsIgnoreCase(nomes)) {
                 return categoria ;

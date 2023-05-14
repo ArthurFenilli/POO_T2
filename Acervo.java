@@ -8,13 +8,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class Acervo {
     private ArrayList<AudioVisual> lista;
+    private Categoria categoria_r;
 
     public Acervo(){
         lista = new ArrayList<AudioVisual>();
     }
 
     public void leituraDeArquivo(){
-        Path path = Paths.get("a");
+        Path path = Paths.get("C:/Users/T-Gamer/Downloads/dados.csv");
         try (BufferedReader br = Files.newBufferedReader(path,Charset.defaultCharset())) {
         String linha = null;
         while ((linha = br.readLine()) != null) {
@@ -27,21 +28,23 @@ public class Acervo {
             BluRay b = new BluRay(titulo,preco,duracao);
             lista.add(b);
         }
-        else{
+        else if(linha.contains(";2;")){
             String titulo2 = sc.next();
             double preco2 = Double.parseDouble(sc.next());
             sc.next();
             String categoria = sc.next();
-            Categoria categoria_r = null;
             categoria_r = categoria_r.fromNome(categoria);
-            Game game = new Game(titulo2, preco2, categoria_r);
+            Game game = new Game(titulo2, preco2,categoria_r );
             lista.add(game);
 
+        }
+        else{
+            
         }
         }
         }
         catch (IOException e) {
-            System.err.format("Erro na leitura de arquivos");
+            System.err.format("Erro na leitura de arquivos:" + e);
         }
     }
 }
