@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -49,5 +50,17 @@ public class Acervo {
 
     public AudioVisual get(int i){
         return lista.get(i);
+    }
+
+    public void escritaDeArquivo(){
+        Path path = Paths.get("C:/Users/T-Gamer/Downloads/resultado.csv");
+        try(PrintWriter p = new PrintWriter(Files.newBufferedWriter(path, Charset.defaultCharset()))){
+            p.format("%d;%d%n",1,lista.size());
+
+        }
+        catch (IOException e){
+            System.out.println("Erro na escrita de arquivos " + e);
+        }
+
     }
 }
