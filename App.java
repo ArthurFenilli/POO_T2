@@ -8,7 +8,7 @@ public class App {
 
     public void executa(){
         acervo.leituraDeArquivo();
-        //System.out.println("oi");
+        System.out.println(acervo.get(0).getPrecoBase());
     }
     
 }

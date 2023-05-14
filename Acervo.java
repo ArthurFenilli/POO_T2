@@ -46,4 +46,8 @@ public class Acervo {
             System.err.format("Erro na leitura de arquivos:" + e);
         }
     }
+
+    public AudioVisual get(int i){
+        return lista.get(i);
+    }
 }
