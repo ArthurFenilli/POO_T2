@@ -65,7 +65,7 @@ public class Acervo {
 
             for(int i = 0; i<lista.size();i++){
 
-                p.format("%d;%s;%f;%f%n",2,lista.get(i).getTitulo(),lista.get(i).calculaPrecoVenda(),lista.get(i).calculaImposto());
+                p.format("%d;%s;%.2f;%.2f%n",2,lista.get(i).getTitulo(),lista.get(i).calculaPrecoVenda(),lista.get(i).calculaImposto());
             
             }
 
@@ -109,7 +109,7 @@ public class Acervo {
                     proximo = lista.get(i);
                 }
             }
-            p.format("%d;%f;%s%n",4,media,proximo.getTitulo());
+            p.format("%d;%.2f;%s%n",4,media,proximo.getTitulo());
             }
         }
 
