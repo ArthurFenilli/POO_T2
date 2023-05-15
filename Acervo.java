@@ -58,6 +58,7 @@ public class Acervo {
     
         try(PrintWriter p = new PrintWriter(Files.newBufferedWriter(path, Charset.defaultCharset()))){
             int count = 0;
+            double soma = 0;
             //1
             p.format("%d;%d%n",1,lista.size());
             //2
@@ -83,8 +84,36 @@ public class Acervo {
             }
             p.format("%d;%d%n",3,count);
 
+            //4
+            count = 0;
+
+            for(int i = 0; i<lista.size();i++){
+
+                if(lista.get(i) instanceof BluRay){
+                    soma =  soma + lista.get(i).calculaImposto();
+                    count ++;
+                }
+            
+            }
+            if(count == 0){
+                p.format("%d;%s%n", 4,"Nenhum BluRay.");
+            }
+            else{
+            double media = soma/count;
+            AudioVisual proximo = lista.get(0);
+            double parametro_menor = Math.abs(media - proximo.calculaImposto() );
+            for(int i = 0; i<lista.size();i++){
+                double parametro_atual = Math.abs(media - lista.get(i).calculaImposto());
+                if(parametro_atual < parametro_menor){
+                    parametro_menor = parametro_atual;
+                    proximo = lista.get(i);
+                }
+            }
+            p.format("%d;%f;%s%n",4,media,proximo.getTitulo());
+            }
         }
-        catch (IOException e){
+
+        catch (Exception e){
             System.out.println("Erro na escrita de arquivos " + e);
         }
 
