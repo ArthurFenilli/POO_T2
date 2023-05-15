@@ -17,5 +17,9 @@ abstract class AudioVisual implements Cobravel {
         return precoBase;
     }
 
+    public String getTitulo(){
+        return titulo;
+    }
+
     
 }

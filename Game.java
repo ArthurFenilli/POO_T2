@@ -14,6 +14,10 @@ public class Game extends AudioVisual {
         return calculaPrecoVenda() * 0.5;
     }
 
+    public Categoria getCategoria(){
+        return categoria;
+    }
+
 
     
 }

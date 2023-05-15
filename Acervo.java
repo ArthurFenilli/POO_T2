@@ -54,8 +54,34 @@ public class Acervo {
 
     public void escritaDeArquivo(){
         Path path = Paths.get("C:/Users/T-Gamer/Downloads/resultado.csv");
+
+    
         try(PrintWriter p = new PrintWriter(Files.newBufferedWriter(path, Charset.defaultCharset()))){
+            int count = 0;
+            //1
             p.format("%d;%d%n",1,lista.size());
+            //2
+
+            for(int i = 0; i<lista.size();i++){
+
+                p.format("%d;%s;%f;%f%n",2,lista.get(i).getTitulo(),lista.get(i).calculaPrecoVenda(),lista.get(i).calculaImposto());
+            
+            }
+
+            //3
+
+            for(int i = 0; i<lista.size();i++){
+
+                if(lista.get(i) instanceof Game){
+                    Game a = (Game)lista.get(i);
+                    Categoria b = a.getCategoria();
+                    if(b == Categoria.RPG){
+                        count ++;
+                    }
+                }
+            
+            }
+            p.format("%d;%d%n",3,count);
 
         }
         catch (IOException e){
