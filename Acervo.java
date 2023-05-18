@@ -103,10 +103,12 @@ public class Acervo {
             AudioVisual proximo = lista.get(0);
             double parametro_menor = Math.abs(media - proximo.calculaImposto() );
             for(int i = 0; i<lista.size();i++){
+                if(lista.get(i) instanceof BluRay){
                 double parametro_atual = Math.abs(media - lista.get(i).calculaImposto());
                 if(parametro_atual < parametro_menor){
                     parametro_menor = parametro_atual;
                     proximo = lista.get(i);
+                }
                 }
             }
             p.format("%d;%.2f;%s%n",4,media,proximo.getTitulo());
