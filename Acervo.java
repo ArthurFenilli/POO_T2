@@ -15,7 +15,7 @@ public class Acervo {
     }
 
     public void leituraDeArquivo(){
-        Path path = Paths.get("C:/Users/T-Gamer/Downloads/dados.csv");
+        Path path = Paths.get("C:/Users/Arthur/Downloads/dados.csv");
         try (BufferedReader br = Files.newBufferedReader(path,Charset.defaultCharset())) {
         String linha = null;
         while ((linha = br.readLine()) != null) {
@@ -53,7 +53,7 @@ public class Acervo {
     }
 
     public void escritaDeArquivo(){
-        Path path = Paths.get("C:/Users/T-Gamer/Downloads/resultado.csv");
+        Path path = Paths.get("C:/Users/Arthur/Downloads/resultado.csv");
 
     
         try(PrintWriter p = new PrintWriter(Files.newBufferedWriter(path, Charset.defaultCharset()))){

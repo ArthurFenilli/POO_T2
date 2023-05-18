@@ -1,5 +1,5 @@
 
-abstract class AudioVisual implements Cobravel {
+    public abstract class AudioVisual implements Cobravel {
     private String titulo;
     private double precoBase;
 
