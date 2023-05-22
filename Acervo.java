@@ -15,10 +15,11 @@ public class Acervo {
     }
 
     public void leituraDeArquivo(){
-        Path path = Paths.get("C:/Users/Arthur/Downloads/dados.csv");
+        Path path = Paths.get("C:/Users/Arthur/Downloads/dados (2).csv");
         try (BufferedReader br = Files.newBufferedReader(path,Charset.defaultCharset())) {
         String linha = null;
         while ((linha = br.readLine()) != null) {
+            try{
         Scanner sc = new Scanner(linha).useDelimiter(";");
         if(linha.contains(";1;")){
             String titulo = sc.next();
@@ -40,6 +41,10 @@ public class Acervo {
         }
         else{
             
+        }
+        }
+        catch(Exception e ){
+
         }
         }
         }
